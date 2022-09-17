@@ -8,6 +8,19 @@
 //   reverseInt(-15) === -51
 //   reverseInt(-90) === -9
 
-function reverseInt(n) {}
+// input: integer
+// return: integer -> reverse of input, 123 -> 321
+
+
+
+
+
+
+function reverseInt(n) {
+
+
+
+
+}
 
 module.exports = reverseInt;
