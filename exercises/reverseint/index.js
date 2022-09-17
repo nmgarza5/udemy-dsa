@@ -11,16 +11,19 @@
 // input: integer
 // return: integer -> reverse of input, 123 -> 321
 
-
+// easy: turn to string, reverse, and then turn back into int
 
 
 
 
 function reverseInt(n) {
+    return Math.sign(n) * parseInt(n.toString().split('').reverse().join(''))
 
 
 
 
 }
+
+console.log(reverseInt(51))
 
 module.exports = reverseInt;
