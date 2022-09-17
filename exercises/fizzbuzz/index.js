@@ -12,6 +12,44 @@
 //   4
 //   buzz
 
-function fizzBuzz(n) {}
+/*
+Input: integer n
+return: series of console logs. print each number unless the following:
+    - divisible by 3: fizz
+    - divisibile by 5: buzz
+    - divisibile by 3 and 5: fizzbuzz
 
+plan of attack:
+    - intitialize counter = 1
+    - while loop counter <= n
+    - if (n % 3 === 0) fizz
+    - else if (n % 5 === 0) buzz
+    - else if (n % 5 === 0 && n % 3 === 0) fizzbuzz
+    - else: n
+
+    Time: O(n)
+    Space: O(n)
+*/
+
+function fizzBuzz(n) {
+    let counter = 1;
+    while (counter <= n) {
+
+        let three = counter % 3 === 0,
+            five = counter % 5 === 0;
+        // if (three && five) console.log('fizzbuzz')
+        // else if (three) console.log('fizz')
+        // else if (five) console.log('buzz')
+        // else console.log(counter)
+
+        //ternary operator
+        three && five ? console.log('fizzbuzz')
+        : three ? console.log('fizz')
+        : five ? console.log('buzz')
+        : console.log(counter)
+
+        counter++
+    }
+}
+fizzBuzz(15);
 module.exports = fizzBuzz;
