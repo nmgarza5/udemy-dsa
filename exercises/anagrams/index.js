@@ -50,7 +50,7 @@ function anagrams(stringA, stringB) {
 
 }
 
-// const buildMap = (hashmap, string) => {
+// const buildMap = (hashmap = {}, string) => {
 //     let reg = /[^\w]/g
 //     let newString = string.replace(reg, '').toLowerCase()
 //     for (let char of newString) {
@@ -60,11 +60,8 @@ function anagrams(stringA, stringB) {
 // }
 
 // function anagrams(stringA, stringB) {
-//     let hash1 = {},
-//         hash2 = {}
-
-//     buildMap(hash1, stringA)
-//     buildMap(hash2, stringB)
+//     buildMap(stringA)
+//     buildMap(stringB)
 
 //     let sameLength = Object.keys(hash1).length === Object.keys(hash2).length
 
