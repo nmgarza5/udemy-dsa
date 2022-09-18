@@ -11,7 +11,7 @@ function capitalize(str) {
     let arr = str.split(' ')
     let newArr = []
     arr.forEach(word => {
-        word = word.charAt(0).toUpperCase() + word.slice(1)
+        word = word[0].toUpperCase() + word.slice(1)
         newArr.push(word)
     })
     return newArr.join(' ')
@@ -19,9 +19,9 @@ function capitalize(str) {
     // let arr = str.split(' ')
     // let sentence = arr.reduce((sentence, word) => {
     //     if (arr.indexOf(word) === arr.length - 1) {
-    //         word = word.charAt(0).toUpperCase() + word.slice(1)
+    //         word = word[0].toUpperCase() + word.slice(1)
     //     } else {
-    //         word = word.charAt(0).toUpperCase() + word.slice(1) + ' '
+    //         word = word[0].toUpperCase() + word.slice(1) + ' '
     //     }
     //     sentence += word
     //     return sentence

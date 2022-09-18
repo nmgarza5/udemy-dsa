@@ -13,7 +13,57 @@
 //       '  #  '
 //       ' ### '
 //       '#####'
+//   pyramid(4)
+//       '   #   '
+//       '  ###  '
+//       ' ##### '
+//       '#######'
+//   pyramid(5)
+//       '    #    '
+//       '   ###   '
+//       '  #####  '
+//       ' ####### '
+//       '#########'
 
-function pyramid(n) {}
+/*
 
+input: positive integer indicating pyramid height
+
+return: series of console.logs depicting a pyramid
+
+-plan of attack
+    - initialize level  = '#'
+    - intialize space = '_'
+
+    - iterate O to n - build first level
+        - if (i < n)
+            - level = space + level + space
+    - iterate 0 to n - build remaining levels and print each
+        - if (i === 0) console.log(level)
+        - initialize middle index = Math.round(level.length / 2)
+        - level = level.slice(1, middle) + '##' + level.slice(middle, level.length-1)
+        console.log(level)
+
+*/
+
+
+function pyramid(n) {
+    let level = '#'
+    let space = ' '
+
+    for (let i = 1; i < n; i++) {
+        if (i < n) level = space + level + space
+    }
+    for (let i = 0; i < n; i++) {
+        if (i === 0) console.log(level)
+        else {
+            let middle = Math.round(level.length / 2)
+            level = level.slice(1, middle) + '##' + level.slice(middle, level.length-1)
+            console.log(level)
+        }
+    }
+}
+pyramid(1)
+pyramid(2)
+pyramid(5)
 module.exports = pyramid;
