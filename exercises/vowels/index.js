@@ -12,7 +12,7 @@ input: string
 return: integer -> indicated numer of vowels used in the string
 
 plan of attack:
-    - initialize vowel hashmap
+    - initialize vowel hashmap -> O(1) lookup
     - initialize count = 0
     - iterate O to n (str.length)
         - if (hashMap[str[i]]) count ++
@@ -28,7 +28,7 @@ function vowels(str) {
         'u': 'u'
     }
     let count = 0
-    for (let char of str) {
+    for (let char of str.toLowerCase()) {
         if (vowels[char]) count++
     }
     return count
@@ -43,7 +43,7 @@ function vowels(str) {
 //         'o': 'o',
 //         'u': 'u'
 //     }
-//     return str.split('').reduce((total, char) => {
+//     return str.toLowerCase().split('').reduce((total, char) => {
 //         if (vowels[char]) total++
 //         return total
 //     }, 0)
