@@ -46,24 +46,59 @@ return: series of console.logs depicting a pyramid
 
 */
 
+// INITIAL SOLUTION
+// function pyramid(n) {
+//     let level = '#'
+//     let space = ' '
 
-function pyramid(n) {
-    let level = '#'
-    let space = ' '
+//     for (let i = 1; i < n; i++) {
+//         if (i < n) level = space + level + space
+//     }
+//     for (let i = 0; i < n; i++) {
+//         if (i === 0) console.log(level)
+//         else {
+//             let middle = Math.round(level.length / 2)
+//             level = level.slice(1, middle) + '##' + level.slice(middle, level.length-1)
+//             console.log(level)
+//         }
+//     }
+// }
 
-    for (let i = 1; i < n; i++) {
-        if (i < n) level = space + level + space
+// // UDEMY ITERATIVE SOLUTION
+// function pyramid(n) {
+//     let midPoint = Math.floor((2 * n - 1) / 2)
+//     for (let row = 0; row < n; row++) {
+//         let level = ''
+
+//         for (let col = 0; col < (n*2) - 1; col++) {
+//             if (col >= midPoint - row && col <= midPoint + row) level += '#'
+//             else level += ' '
+//         }
+//         console.log(level)
+//     }
+// }
+
+
+// UDEMY RECURSIVE SOLUTION
+function pyramid(n, row = 0, level = '') {
+    let midPoint = Math.floor((2 * n - 1) / 2)
+    let col = level.length
+    if (n === row) return
+
+    // case to print each row and reset how the level is built
+    if (n * 2 - 1 === col) {
+        console.log(level)
+        return pyramid(n, row + 1);
     }
-    for (let i = 0; i < n; i++) {
-        if (i === 0) console.log(level)
-        else {
-            let middle = Math.round(level.length / 2)
-            level = level.slice(1, middle) + '##' + level.slice(middle, level.length-1)
-            console.log(level)
-        }
-    }
+
+    // if the above to cases are not hit, continue to build the stair
+    if (col >= midPoint - row && col <= midPoint + row) level += '#'
+    else level += ' '
+    pyramid(n, row, level);
 }
-pyramid(1)
-pyramid(2)
-pyramid(5)
+
+
+// pyramid(1)
+pyramid(3)
+// pyramid(5)
 module.exports = pyramid;
