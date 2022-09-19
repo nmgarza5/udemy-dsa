@@ -8,6 +8,8 @@
 // Example:
 //   fib(4) === 3
 
+const { memoize } = require("lodash")
+
 /*
 input: integer n
 return: integer nth number of fibonacci series
@@ -39,14 +41,31 @@ next = curr + prev
 //     return fib(n, count, next, current)
 // }
 
+// COMMON RECURSIVE SOLUTION - close to exponential complexity
+//      which is really bad. if you give this solution, make sure
+//      you say so. When they say how can it be improved, you must
+//      say:
+//      !!!!!!!!!! MEMOIZATION!!!!!!!
+//      - memoization: is the act of storing the argument(s) and return value(s)
+//          for a given function. if we see those inputs again, do not run the function,
+//          just take the return result
+const memoizer = (fn) => {
+    const cache = {};
+    return function(...args) {
+        if (cache[args]) return cache[args]
+        let result = fn.apply(this, args)
+        cache[args] = result
+        return result
+    }
+}
 
 function fib(n) {
     if (n < 2) return n
     return fib(n - 1) + fib(n - 2)
 }
 
+const fastFib = memoizer(fib)
 
-
-console.log(fib(4))
-console.log(fib(9))
+// console.log(fib(4))
+console.log(fastFib(9))
 module.exports = fib;
