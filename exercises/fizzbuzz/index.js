@@ -51,5 +51,5 @@ function fizzBuzz(n) {
         counter++
     }
 }
-// fizzBuzz(15);
+fizzBuzz(15);
 module.exports = fizzBuzz;

@@ -2,13 +2,13 @@ const L = require('./index');
 const List = L.LinkedList;
 const Node = L.Node;
 
-test('List is a class', () => {
-  expect(typeof List.prototype.constructor).toEqual('function');
-});
+// test('List is a class', () => {
+//   expect(typeof List.prototype.constructor).toEqual('function');
+// });
 
-test('Node is a class', () => {
-  expect(typeof Node.prototype.constructor).toEqual('function');
-});
+// test('Node is a class', () => {
+//   expect(typeof Node.prototype.constructor).toEqual('function');
+// });
 
 describe.skip('A Node', () => {
   test('has properties "data" and "next"', () => {
@@ -135,7 +135,7 @@ describe.skip('RemoveLast', () => {
   });
 });
 
-describe.skip('InsertLast', () => {
+describe('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
