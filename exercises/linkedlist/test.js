@@ -135,7 +135,7 @@ describe.skip('RemoveLast', () => {
   });
 });
 
-describe('InsertLast', () => {
+describe.skip('InsertLast', () => {
   test('adds to the end of the list', () => {
     const l = new List();
     l.insertFirst('a');
@@ -143,7 +143,7 @@ describe('InsertLast', () => {
     l.insertLast('b');
 
     expect(l.size()).toEqual(2);
-    expect(l.getLast().data).toEqual('b');
+    expect(l.getLast()).toEqual('b');
   });
 });
 
@@ -292,7 +292,7 @@ describe.skip('ForEach', () => {
   });
 });
 
-describe.skip('for...of loops', () => {
+describe('for...of loops', () => {
   test('works with the linked list', () => {
     const l = new List();
 
