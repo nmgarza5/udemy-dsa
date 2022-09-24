@@ -23,11 +23,7 @@ function palindrome(str) {
     let left = 0
     let right = str.length-1
 
-    console.log(str.split(''))
-
     for (i = 0; i < str.length; i++ ) {
-        console.log(left, right, str[left], ' equals ', str[right], str[left] === str[right])
-
         if (str[left] !== str[right]) return false
         else {
             left++
