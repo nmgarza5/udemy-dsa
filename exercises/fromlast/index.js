@@ -9,8 +9,27 @@
 //    list.insertLast('b');
 //    list.insertLast('c');
 //    list.insertLast('d');
+//  a - b - c - d
 //    fromLast(list, 2).data // 'b'
 
-function fromLast(list, n) {}
+function fromLast(list, n) {
+
+    let length = 0;
+    let current = list.head
+    while(current.next) {
+        current = current.next
+        length++
+    }
+
+    let count = 0;
+    current = list.head
+    while(count < length-n) {
+        current = current.next
+        count++
+    }
+
+    return current
+
+}
 
 module.exports = fromLast;
